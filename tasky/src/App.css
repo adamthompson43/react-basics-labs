@@ -12,10 +12,6 @@ div {
   padding: 20px;
 }
 
-.container{
-  text-align: center;
-}
-
 .card {
   display: inline-block;
   vertical-align: top;
@@ -63,6 +59,10 @@ button {
   color: red;
 }
 
+.container{
+  text-align: center;
+}
+
 input[type=text], input[type=date] {
   width: 60%;
   padding: 12px 20px;
@@ -93,6 +93,7 @@ form {
   width: 50%;
   margin: auto;
 }
+
 
 
 

@@ -12,6 +12,12 @@ function App() {
       { id: 3, title: "Tidy up", deadline: "Today", done: false }
     ]
   });
+
+  const [ formState, setFormState ] = useState({
+    title: "",
+    description: "",
+    deadline: ""
+  });
   
   const doneHandler = (taskIndex) => {
     const tasks = [...taskState.tasks];
@@ -25,8 +31,27 @@ function App() {
     setTaskState({tasks});
   } 
 
+  const formChangeHandler = (event) => {
+    let form = {...formState};
 
-  
+    switch(event.target.name) {
+      case "title":
+          form.title = event.target.value;
+          break;
+      case "description":
+          form.description = event.target.value;
+          break;
+      case "deadline":
+          form.deadline = event.target.value;
+          break;
+      default:
+          form = formState;
+    }
+    setFormState(form);
+  }
+
+  console.log(formState);
+
   return (
     <div className="container">
       <h1>Tasky</h1>
